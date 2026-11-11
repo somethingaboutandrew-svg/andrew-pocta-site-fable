@@ -59,7 +59,7 @@ for (const [label, width, height] of [['desktop', 1440, 900], ['phone', 390, 844
     await page.keyboard.press('Escape');
     check('viewer closes with Escape', !(await page.evaluate(() => document.getElementById('media').open)));
     // Demo buttons: one per live link, one per video
-    const want = await page.evaluate(() => window.SITE.projects.reduce((n, p) => n + (/^https?:\/\/|^\//.test(p.link || '') ? 1 : 0) + (p.video ? 1 : 0), 0));
+    const want = await page.evaluate(() => window.SITE.projects.reduce((n, p) => n + (/^https?:\/\/|^\//.test(p.link || '') ? 1 : 0) + (p.video && !/\[PLACEHOLDER/.test(p.video) ? 1 : 0), 0));
     const got = await page.$$eval('#work .demo', l => l.length);
     check('every live link and video has a Live demo / Watch demo button', got === want, `${got}/${want}`);
     const vid = page.locator('[data-video]').first();

@@ -239,7 +239,8 @@ function actions(p){
   let h='';
   if(live(p))h+=`<a class="btn primary demo" href="${esc(live(p))}" target="_blank" rel="noopener">Live demo ↗</a>`;
   else if(DRAFT&&isPH(p.link))h+=fmt(p.link);
-  if(p.video)h+=`<button class="btn demo${live(p)?'':' primary'}" data-video="${esc(p.video)}" data-poster="${esc(p.poster||'')}">Watch demo ▶</button>`;
+  if(p.video&&!isPH(p.video))h+=`<button class="btn demo${live(p)?'':' primary'}" data-video="${esc(p.video)}" data-poster="${esc(isPH(p.poster)?'':p.poster||'')}">Watch demo ▶</button>`;
+  else if(DRAFT&&isPH(p.video))h+=fmt(p.video);
   return h+`<button class="btn" data-p="${esc(p.id)}" aria-expanded="false" aria-controls="n-${esc(p.id)}">Project notes +</button>`;
 }
 function notes(p){
@@ -286,7 +287,7 @@ function scene(p,i){
 }
 const words=(S.headlineWords&&S.headlineWords.length)?S.headlineWords:['things'];
 const initials=String(S.name||'').split(/\s+/).map(w=>w[0]||'').join('').slice(0,2);
-const photo=(cls='')=>S.photo&&!isPH(S.photo)?`<img ${cls} src="${esc(S.photo)}" alt="${esc(S.name)}" width="600" height="600">`:`<div class="avatar" aria-hidden="true">${esc(initials)}</div>`;
+const photo=()=>S.photo&&!isPH(S.photo)?`<img src="${esc(S.photo)}" alt="${esc(S.name)}" width="600" height="600">`:`<div class="avatar" aria-hidden="true">${esc(initials)}</div>`;
 const mail=isPH(S.email)?fmt(S.email||''):`<a class="mail" href="mailto:${esc(S.email)}">${esc(S.email)}</a>`;
 
 $('#app').innerHTML=`
