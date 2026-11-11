@@ -54,7 +54,7 @@ window.SITE = {
         "App Store release and linking an AI subscription are planned for later versions"
       ],
       statusLong: "In build · v1, private family release first",
-      link: "https://andrewpocta.netlify.app/family-hub/",
+      link: "https://andrewpocta-fable.netlify.app/family-hub/",
       tileImages: ["images/family-hub-calendar.jpg", "images/family-hub-tasks.jpg", "images/family-hub-lists.jpg"],
       images: ["images/family-hub-demo.jpg"]
     },
