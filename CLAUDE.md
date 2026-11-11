@@ -20,7 +20,7 @@ This repo (`andrew-pocta-site-fable`) started as a copy of the original site and
 - `#work`: one `.scene` per project (`#p-<id>`), `nowBuilding` project first, the rest in `content.js` order. Each scene: number, status pill, title, summary, Live demo / Watch demo buttons, a "Project notes" toggle (`button[data-p]` → `#n-<id>`), and a screenshot stage tinted with the project's `color`. `contours: true` draws contour lines behind that scene.
 - Desktop only: a fixed rail on the right lists the projects and marks the current one.
 - `#process`, `#about`, `#contact`, footer.
-- Placeholders are hidden from visitors; `?draft` shows every one as an amber tag. Projects with an http(s) or /path `link` get a Live demo button.
+- Placeholders are hidden from visitors; `?draft` shows every one as an amber tag. Projects with an http(s) or /path `link` get a Live demo button. `linkLabel` replaces the words "Live demo"; a `linkLabel` with no link yet renders a greyed-out, non-clickable button (`.btn.soon`).
 
 ## Rules
 1. **Never invent facts.** Unknown details stay as `[PLACEHOLDER: ...]` (rendered as amber tags in `?draft`). No made-up stats, dates, users or testimonials.
@@ -45,6 +45,7 @@ Must print `PASS` for every check:
 - the `nowBuilding` project comes first; every project in `content.js` renders a scene with its title, all its screenshots, and notes that open and close
 - screenshots enlarge in the viewer; Escape closes it
 - every live link and video shows a Live demo / Watch demo button; Watch demo opens the video
+- custom `linkLabel` buttons show their words: clickable with a link, greyed-out without
 - ⌘K / Ctrl+K palette opens, lists every project and closes; on phones Menu opens it and picking a project jumps there
 - visitors see no [PLACEHOLDER] tags; `?draft` shows every one
 - process shows every step and tool; about shows the quote, bio and CV rows; contact shows the email and all links

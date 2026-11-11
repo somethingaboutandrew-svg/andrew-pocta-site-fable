@@ -32,6 +32,10 @@ window.SITE = {
                   large; the rest are small pictures you click to swap in.
                   Click the large one to enlarge it.
      link       = a web address gives the project a "Live demo" button.
+     linkLabel  = (optional) your own words for that button, e.g.
+                  "Check it out on the App Store". If linkLabel is set but
+                  link is still empty, the button shows greyed-out and
+                  can't be clicked, e.g. "Demo - Coming Soon!".
      video      = a demo video gives the project a "Watch demo" button. */
   projects: [
     {
@@ -67,7 +71,8 @@ window.SITE = {
       what: [],
       how: ["Built with Grok, Claude Code and Cursor"],
       statusLong: "Prototype",
-      link: "[PLACEHOLDER: demo link or video]",
+      linkLabel: "Check it out on the App Store",
+      link: "[PLACEHOLDER: App Store link, once Apple approves it]",
       tileImages: ["images/sheetscale-map.jpg", "images/sheetscale-home.jpg"],
       images: ["images/sheetscale-map.jpg", "images/sheetscale-home.jpg"]
     },
@@ -89,7 +94,8 @@ window.SITE = {
         "Known engineering issue being solved: unlocking audio on iPad"
       ],
       statusLong: "On the App Store · V2 in progress",
-      link: "[PLACEHOLDER: demo link or video]",
+      linkLabel: "Check it out on the App Store",
+      link: "https://apps.apple.com/us/app/math-mystics-kids-math/id6783912590",
       tileImages: ["images/math-mystics-play.jpg", "images/math-mystics-players.jpg"],
       images: ["images/math-mystic.jpg", "images/math-mystics-play.jpg", "images/math-mystics-players.jpg"]
     },
@@ -121,7 +127,8 @@ window.SITE = {
       what: ["Interactive app that explains what wetlands are, how they function and what happens when they are filled or impacted without proper planning."],
       how: ["Built with Grok, Claude Code, Cursor, Three.js, etc."],
       statusLong: "Prototype",
-      link: "[PLACEHOLDER: demo link or video]",
+      linkLabel: "Check out the interactive app here",
+      link: "https://www.mapenvironmental.com/wetlands-guide/",
       video: "media/wetlands-demo.mp4",
       poster: "images/wetlands-poster.jpg",
       tileImages: ["images/wetlands-model.jpg"],
@@ -135,7 +142,7 @@ window.SITE = {
       summary: "Inspired by the experience of my two oldest children, I created an interactive web app for brainstorming wheelchair tool/accessory concepts and developing them for testing and feedback before factory roll-out.",
       details: "Inspired by the experience of my two oldest children, I created an interactive web app for brainstorming wheelchair tool/accessory concepts and developing them for testing and feedback before factory roll-out.",
       what: [],
-      how: ["[PLACEHOLDER: how you built it with AI]"],
+      how: ["Built with Grok and Cursor"],
       statusLong: "Prototype",
       link: "https://wheelchairtoolconcepts.grok.me/",
       tileImages: ["images/rollforge.jpg"],
@@ -151,7 +158,8 @@ window.SITE = {
       what: [],
       how: ["Built with Grok, Claude Code and Cursor"],
       statusLong: "Now Building",
-      link: "[PLACEHOLDER: demo link or video]",
+      linkLabel: "Demo - Coming Soon!",
+      link: "",
       tileImages: ["images/757-locals.jpg"],
       images: ["images/757-locals.jpg"]
     },
@@ -163,7 +171,7 @@ window.SITE = {
       summary: "Inspired by other mobile apps. Together with my son, our first mobile app project. While the Eye is looking away, fill in the image as quickly as possible. When the Eye opens / looks at you, FREEZE — any finger movement = instant death. Score = % of image filled before death (or 100% clear). Share death + score with friends.",
       details: "Inspired by other mobile apps. Together with my son, our first mobile app project. While the Eye is looking away, fill in the image as quickly as possible. When the Eye opens / looks at you, FREEZE — any finger movement = instant death. Score = % of image filled before death (or 100% clear). Share death + score with friends.",
       what: [],
-      how: ["[PLACEHOLDER: how you built it with AI]"],
+      how: ["Built with Grok and Cursor"],
       statusLong: "Prototype",
       link: "https://inkfreeze.grok.me/",
       tileImages: ["images/inkfreeze.jpg"],

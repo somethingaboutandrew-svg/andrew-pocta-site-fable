@@ -62,6 +62,11 @@ for (const [label, width, height] of [['desktop', 1440, 900], ['phone', 390, 844
     const want = await page.evaluate(() => window.SITE.projects.reduce((n, p) => n + (/^https?:\/\/|^\//.test(p.link || '') ? 1 : 0) + (p.video && !/\[PLACEHOLDER/.test(p.video) ? 1 : 0), 0));
     const got = await page.$$eval('#work .demo', l => l.length);
     check('every live link and video has a Live demo / Watch demo button', got === want, `${got}/${want}`);
+    const labels = await page.evaluate(() => window.SITE.projects.filter(p => p.linkLabel && !/\[PLACEHOLDER/.test(p.linkLabel)).map(p => {
+      const live = /^https?:\/\/|^\//.test(p.link || ''), el = document.querySelector(`#p-${p.id} ${live ? 'a.demo' : '.btn.soon'}`);
+      return !!el && el.textContent.includes(p.linkLabel) && (live ? el.getAttribute('href') === p.link : !el.hasAttribute('href'));
+    }));
+    check('custom button labels show (clickable with a link, greyed-out without)', labels.every(Boolean), `${labels.filter(Boolean).length}/${labels.length}`);
     const vid = page.locator('[data-video]').first();
     if (await vid.count()) {
       await vid.click();

@@ -111,6 +111,9 @@ kbd{font-family:var(--mono);font-size:11px;padding:2px 6px;border:1px solid var(
 .btn.primary{background:var(--fg);border-color:var(--fg);color:#0a0a0a;font-weight:600}
 .btn.primary:hover{background:#fff}
 .btn:active{transform:scale(.97)}
+.btn.soon{border-style:dashed;color:var(--mute);cursor:default}
+.btn.soon:hover{border-color:var(--line)}
+.btn.soon:active{transform:none}
 .notes{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
 .notes:not([hidden]){animation:rise 240ms var(--ease)}
 .notes h4{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--c);margin:20px 0 8px}
@@ -237,8 +240,13 @@ const P=lead?[lead,...all.filter(p=>p!==lead)]:all;
 
 function actions(p){
   let h='';
-  if(live(p))h+=`<a class="btn primary demo" href="${esc(live(p))}" target="_blank" rel="noopener">Live demo ↗</a>`;
-  else if(DRAFT&&isPH(p.link))h+=fmt(p.link);
+  /* linkLabel in content.js sets the button's words; with a label but no link yet, it shows as a "not yet" button */
+  const label=p.linkLabel&&!isPH(p.linkLabel)?p.linkLabel:'';
+  if(live(p))h+=`<a class="btn primary demo" href="${esc(live(p))}" target="_blank" rel="noopener">${label?fmt(label):'Live demo'} ↗</a>`;
+  else{
+    if(label)h+=`<span class="btn soon" role="link" aria-disabled="true">${fmt(label)}</span>`;
+    if(DRAFT&&isPH(p.link))h+=fmt(p.link);
+  }
   if(p.video&&!isPH(p.video))h+=`<button class="btn demo${live(p)?'':' primary'}" data-video="${esc(p.video)}" data-poster="${esc(isPH(p.poster)?'':p.poster||'')}">Watch demo ▶</button>`;
   else if(DRAFT&&isPH(p.video))h+=fmt(p.video);
   return h+`<button class="btn" data-p="${esc(p.id)}" aria-expanded="false" aria-controls="n-${esc(p.id)}">Project notes +</button>`;
