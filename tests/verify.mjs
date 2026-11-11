@@ -6,18 +6,18 @@ import path from 'path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const url = 'file://' + path.join(root, 'index.html');
-const SITE_URL = 'https://andrewpocta-fable.netlify.app';
+const SITE_URL = 'https://andrewpocta.netlify.app';
 let failed = 0;
 const check = (name, ok, extra = '') => { console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${extra ? '  (' + extra + ')' : ''}`); if (!ok) failed++; };
 
-// Address check: this copy must point at its own Netlify address, never the original site's.
+// Address check: everything must point at the primary address, never the old -fable one.
 const read = f => readFileSync(path.join(root, f), 'utf8');
 const html = read('index.html');
 check('canonical + og URLs use this site\'s address',
   html.includes(`<link rel="canonical" href="${SITE_URL}/">`) && html.includes(`property="og:url" content="${SITE_URL}/"`) &&
-  html.includes(`property="og:image" content="${SITE_URL}/og.png"`) && !/andrewpocta\.netlify\.app/.test(html));
+  html.includes(`property="og:image" content="${SITE_URL}/og.png"`) && !/andrewpocta-fable\.netlify\.app/.test(html));
 check('sitemap + robots use this site\'s address',
-  read('sitemap.xml').includes(`${SITE_URL}/`) && !/andrewpocta\.netlify\.app/.test(read('sitemap.xml')) &&
+  read('sitemap.xml').includes(`${SITE_URL}/`) && !/andrewpocta-fable\.netlify\.app/.test(read('sitemap.xml')) &&
   read('robots.txt').includes(`Sitemap: ${SITE_URL}/sitemap.xml`));
 
 const browser = await chromium.launch();

@@ -1,9 +1,9 @@
-# CLAUDE.md: Andrew Pocta — Builder (personal site, "fable" copy)
+# CLAUDE.md: Andrew Pocta — Builder (personal site)
 
 ## What this is
-Andrew's personal "builder" website: a single static page in the v4 "Showreel" style (black #070707, warm off-white text, one lime accent #d6ff3f, Archivo condensed poster type + JetBrains Mono). One project per screen. Hosted on Netlify at **https://andrewpocta-fable.netlify.app**, auto-deployed from this repo's `main` branch. No build step.
+Andrew's personal "builder" website: a single static page in the v4 "Showreel" style (black #070707, warm off-white text, one lime accent #d6ff3f, Archivo condensed poster type + JetBrains Mono). One project per screen. Hosted on Netlify at **https://andrewpocta.netlify.app**, auto-deployed from this repo's `main` branch. No build step.
 
-This repo is a copy of the original site (andrewpocta.netlify.app, repo `andrew-pocta-site`). **Never touch the original repo.** Canonical, og, sitemap and robots URLs here must point at the fable address (the verification checks this).
+This repo (`andrew-pocta-site-fable`) started as a copy of the original site and became the primary site on Nov 11, 2026. The older repo `andrew-pocta-site` holds the previous v3 design; **don't touch it** unless Andrew asks. Canonical, og, sitemap and robots URLs must point at andrewpocta.netlify.app (the verification checks this).
 
 ## Structure
 - `content.js`: ALL user-facing words, projects and links (`window.SITE`). Andrew edits this by hand on GitHub. Keep its comments and format simple.
@@ -39,7 +39,7 @@ node tests/verify.mjs
 (`package.json` is git-ignored on purpose so Netlify stays a no-build deploy.)
 
 Must print `PASS` for every check:
-- canonical, og, sitemap and robots URLs use the fable address
+- canonical, og, sitemap and robots URLs use andrewpocta.netlify.app
 - page loads with zero console errors and every image file loads (1440 px and 390 px)
 - no horizontal overflow at 1440 px and 390 px widths
 - the `nowBuilding` project comes first; every project in `content.js` renders a scene with its title, all its screenshots, and notes that open and close
@@ -52,7 +52,7 @@ Must print `PASS` for every check:
 - with reduced motion on, content is visible without animation
 
 ## History
-- v4 (Nov 11, 2026): "Showreel" redesign, picked from 3 prototyped directions (Field Sheet, Workbench, Showreel). One project per screen, poster type, project rail, native-dialog viewer and jump list, new og image, favicon and 404. URLs moved to the fable address.
+- v4 (Nov 11, 2026): "Showreel" redesign, picked from 3 prototyped directions (Field Sheet, Workbench, Showreel). One project per screen, poster type, project rail, native-dialog viewer and jump list, new og image, favicon and 404. This repo became the primary site at andrewpocta.netlify.app.
 - v3 (Nov 4, 2026): sideways-scrolling project row (+RollForge, 757 Locals App, InkFreeze), on-tile screenshots with lightbox, new bio/CV/quote, X link, 501(c)(3) font-ligature fix. Tagged `v3`.
 - v2.2 (Nov 4, 2026): headshot, demo videos (Game Night, Wetlands), Math Mystic art, Family Hub sample-data screenshot.
 - v2.1 (Nov 4, 2026): launch prep — Live demo buttons, draft mode, photo/screenshot support, OG image, favicon, 404, sitemap.

@@ -2,7 +2,7 @@
 
 Personal website showcasing apps, games and field tools built with AI.
 
-**Live site:** https://andrewpocta-fable.netlify.app (updates automatically from the `main` branch)
+**Live site:** https://andrewpocta.netlify.app (updates automatically from the `main` branch)
 
 ## Edit the words on the site (no coding)
 
@@ -16,7 +16,7 @@ Personal website showcasing apps, games and field tools built with AI.
 
 ## See what's still missing
 Visitors never see `[PLACEHOLDER: ...]` text. To see it as amber tags, open
-**https://andrewpocta-fable.netlify.app/?draft**
+**https://andrewpocta.netlify.app/?draft**
 
 ## Add pictures (headshot or screenshots)
 1. Open the **images** folder on GitHub, click **Add file → Upload files**, drag your pictures in, click **Commit changes**.

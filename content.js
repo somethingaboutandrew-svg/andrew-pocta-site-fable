@@ -7,7 +7,7 @@
    - To make words bold, wrap them in double stars:  **like this**
    - Anything that still says [PLACEHOLDER: ...] is HIDDEN from visitors.
      To see what's still missing, add ?draft to the address:
-     https://andrewpocta-fable.netlify.app/?draft  (shows amber tags)
+     https://andrewpocta.netlify.app/?draft  (shows amber tags)
    - Pictures: upload them into the "images" folder on GitHub, then put
      the path in quotes, e.g. "images/math-mystic-1.png".
    - New project: copy one whole { ... } block in "projects", paste it after
@@ -54,7 +54,7 @@ window.SITE = {
         "App Store release and linking an AI subscription are planned for later versions"
       ],
       statusLong: "In build · v1, private family release first",
-      link: "https://andrewpocta-fable.netlify.app/family-hub/",
+      link: "https://andrewpocta.netlify.app/family-hub/",
       tileImages: ["images/family-hub-calendar.jpg", "images/family-hub-tasks.jpg", "images/family-hub-lists.jpg"],
       images: ["images/family-hub-demo.jpg"]
     },
