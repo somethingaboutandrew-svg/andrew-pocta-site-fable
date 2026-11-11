@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+# test tooling only: keeping these out of the repo keeps Netlify a no-build deploy
+package.json
+package-lock.json

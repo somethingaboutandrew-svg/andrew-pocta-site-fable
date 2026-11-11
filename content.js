@@ -7,7 +7,7 @@
    - To make words bold, wrap them in double stars:  **like this**
    - Anything that still says [PLACEHOLDER: ...] is HIDDEN from visitors.
      To see what's still missing, add ?draft to the address:
-     https://andrewpocta.netlify.app/?draft  (shows amber tags)
+     https://andrewpocta-fable.netlify.app/?draft  (shows amber tags)
    - Pictures: upload them into the "images" folder on GitHub, then put
      the path in quotes, e.g. "images/math-mystic-1.png".
    - New project: copy one whole { ... } block in "projects", paste it after
@@ -25,13 +25,14 @@ window.SITE = {
   intro: "Environmental Consultant by day and app/game/tool builder by night. I design and ship software for the people around me: educational apps for students, games and helpful tools for families, apps that solve problems that popular apps haven't yet.",
 
   /* ---------- Projects ----------
-     Each project is one tile. "color" can be: teal, violet, blue or neutral.
-     The first project with nowBuilding: true gets the big tile at the top.
-     All the others sit in the sideways-scrolling row, in this order.
-     tileImages = screenshots shown ON the tile (click to enlarge).
-     images     = screenshots shown inside the project panel.
-     link       = a web address gives the tile a "Live demo" button.
-     video      = a demo video gives the tile a "Watch demo" button. */
+     Each project gets its own full screen. "color" can be: teal, violet, blue or neutral.
+     The first project with nowBuilding: true is shown first.
+     All the others follow, in this order.
+     tileImages + images = the project's screenshots. The first one is shown
+                  large; the rest are small pictures you click to swap in.
+                  Click the large one to enlarge it.
+     link       = a web address gives the project a "Live demo" button.
+     video      = a demo video gives the project a "Watch demo" button. */
   projects: [
     {
       id: "hub",
@@ -112,7 +113,7 @@ window.SITE = {
       title: "Wetlands of Hampton Roads",
       status: "Prototype",
       color: "blue",
-      contours: true,                                  // draws map contour lines behind the tile
+      contours: true,                                  // draws map contour lines behind the project
       summary: "Interactive app that explains what wetlands are, how they function and what happens when they are filled or impacted without proper planning.",
       details: "Wetland science software built by a working Professional Wetland Delineator.",
       why: "Built on more than a decade of wetland delineation and Section 404 work in southeastern Virginia and northeastern North Carolina.",
@@ -169,7 +170,7 @@ window.SITE = {
     }
   ],
 
-  /* ---------- Small tiles under the projects ---------- */
+  /* ---------- Short about line + the small tags in How I build ---------- */
   aboutShort: "Environmental Consultant at MAP Environmental Inc. for 14+ years. Wetland scientist and project manager, bilingual in English & Spanish, homeschool dad.",
   buildChips: ["Validate first", "CLAUDE.md rules", "Verify before features", "Claude Code", "Xcode"],
 
