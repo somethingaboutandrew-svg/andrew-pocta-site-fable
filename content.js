@@ -83,6 +83,7 @@ window.SITE = {
         "Designed for my own kids' practice at home"
       ],
       how: [
+        "Built with Grok, Claude Code and Cursor",
         "Built on the browser's Web Speech API",
         "Code is in a private GitHub repo and moving into a Claude Code workflow",
         "Known engineering issue being solved: unlocking audio on iPad"
@@ -100,7 +101,7 @@ window.SITE = {
       summary: "Building a multiplayer game with the games and trivia that WE want to play. Inspired by games like Mario Party, Jackbox Games, Lego Party, etc. with mini-games designed by the whole family and for all ages. Trivia topics curated by us and for us. Up to 10 players scan the QR code on the TV to join the game!",
       details: "A family game built for the living-room TV.",
       what: ["Family game built for up to 10 players: displayed on the TV and each player joins through the QR code"],
-      how: ["Built with Claude Code"],
+      how: ["Built with Grok, Claude Code and Cursor"],
       statusLong: "Prototype",
       link: "[PLACEHOLDER: demo link or video]",
       video: "media/game-night-demo.mp4",
