@@ -130,8 +130,8 @@ window.SITE = {
       link: "https://www.mapenvironmental.com/wetlands-guide/",
       video: "media/wetlands-demo.mp4",
       poster: "images/wetlands-poster.jpg",
-      tileImages: ["images/wetlands-model.jpg"],
-      images: ["images/wetlands-screen.jpg"]
+      tileImages: ["images/wetlands-v2-1.jpg", "images/wetlands-v2-2.jpg"],
+      images: ["images/wetlands-v2-1.jpg", "images/wetlands-v2-2.jpg"]
     },
     {
       id: "rollforge",
